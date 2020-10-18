@@ -88,7 +88,13 @@ The probability distribution over possible labels, given input vector \(\mathbf{
 \textbf{NOTE:} we are implicitly conditioning our classification probabilities on the chosen model. When needed, we can explicitly denote a conditional on a model by writing \(p(y|\textbf{x},\mathcal{D}, M)\) where \(M\) is our chosen model. 
 
 \subsubsection{Regression}
-TODO
+Regression is the same as classification, except the response variable/output is continuous.
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{murphy-fig-1-7.png}
+\caption{(a) Labeled training examples along with 3 unlabeled test cases. (b) \(N x D\) design matrix representing our training data. Each row is a feature vector \(\mathbf{x}_i\). Last column is the label, \(y_i \in \lbrace 0, 1 \rbrace \) \cite{murphy}}
+\label{fig:regressionex1}
+\end{figure}
 
 \subsection{Unsupervised / descriptive learning}
 Goal: learn a mapping from inputs \(\mathbf{x}\) to outputs \(y\)
@@ -103,6 +109,29 @@ Goal: Learn how to act/behave when given occasional reward or punishment signals
 
 \section{KNN}
 TODO
+
+\section{Multivariate Gaussian}
+Gaussian probability density function (PDF):
+
+\[
+    \mathcal{N}(x;\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\]
+
+Two reasons why Gaussian is an important dist.
+\begin{enumerate}
+    \item Maximum entropy dist. with a fixed variance
+    \item {
+        Central limit theorem:
+        \begin{figure}[h]
+        \includegraphics[width=\textwidth]{lec-6-gaussian.PNG}
+        \end{figure}
+    }
+\end{enumerate}
+
+Multivariate Gaussian:
+\[
+    \mathcal{N}(x;\mathbf{\mu},\Sigma) = \frac{1}{\sqrt{(2\pi\mathbf{\Sigma})}}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))
+\]
 
 \printbibliography
 
